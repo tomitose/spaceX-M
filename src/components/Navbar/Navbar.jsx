@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo-spacex.png";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 bg-primary">
+    <div className="navbar bg-primary">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -26,9 +27,11 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Homepage</a>
-            </li>
+            <Link to="/">
+              <li>
+                <p>Home</p>
+              </li>
+            </Link>
             <li>
               <a>Portfolio</a>
             </li>
@@ -38,9 +41,11 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="navbar-center">
-        <img className="w-72" src={logo} alt="Spacex Logo" />
-      </div>
+      <Link to="/">
+        <div className="navbar-center">
+          <img className="w-72" src={logo} alt="Spacex Logo" />
+        </div>
+      </Link>
       <div className="navbar-end">
        
       </div>

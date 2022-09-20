@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import MissionsContainer from "../MissionsContainer/MissionsContainer";
 // import spaceImg from "../../assets/img/spacex-"
 
 const Home = () => {
@@ -15,7 +17,9 @@ const Home = () => {
             <p className="mb-5">
               Here you will see come of the missions we´ve done .
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to="/missions">
+              <button className="btn btn-primary">Get Started</button>
+            </Link>
           </div>
         </div>
       </div>
