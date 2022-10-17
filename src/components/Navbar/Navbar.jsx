@@ -43,7 +43,7 @@ const Navbar = () => {
       </div>
       <Link to="/">
         <div className="navbar-center">
-          <img className="w-72" src={logo} alt="Spacex Logo" />
+          <img className="w-72 max-w-fit" src={logo} alt="Spacex Logo" />
         </div>
       </Link>
       <div className="navbar-end">

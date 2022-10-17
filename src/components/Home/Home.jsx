@@ -15,7 +15,7 @@ const Home = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
             <p className="mb-5">
-              Here you will see come of the missions we´ve done .
+              Here you will see some of the missions we´ve done .
             </p>
             <Link to="/missions">
               <button className="btn btn-primary">Get Started</button>

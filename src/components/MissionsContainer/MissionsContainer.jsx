@@ -1,33 +1,38 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import * as API from "../../services/launches";
-import Missions from '../Missions/Missions';
+import Missions from "../Missions/Missions";
 
 const MissionsContainer = () => {
-  const [launches,setLaunches] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [launches, setLaunches] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true)
-    API.getAllLaunches().then(setLaunches).finally(() => {
-      setLoading(false);
-    });
-    
-  }, [])
-  
+    setLoading(true);
+    API.getAllLaunches()
+      .then(setLaunches)
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   return (
-    <div style={{minHeight: "100vh"}}>
-      <h1>SpaceX Launches</h1>
-      <ul>
-        {loading ? (<div className='flex justify-center'><progress className="progress w-56"></progress></div>
-        ) :
-        (<Missions launches={launches}/>)
-        }
-      </ul>
+    <div>
+      <div>
+        {loading ? (
+          <div className="h-screen flex flex-col items-center justify-center">
+            <progress className="progress w-56"></progress>
+          </div>
+        ) : (
+          <div>
+            <h1 className="font-bold text-center">SpaceX Launches:</h1>
+            <Missions launches={launches} />
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MissionsContainer
+export default MissionsContainer;
