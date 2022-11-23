@@ -24,7 +24,7 @@ const Missions = ({ launches }) => {
               </div>
               <p>Year: {launch.launch_year}</p>
               <div className="card-actions justify-end">
-                <Link to={`${flightNumber}`}>
+                <Link to={`/missions/${launch.flight_number}`}>
                   <button className="btn btn-primary h-8 mt-4">Info</button>
                 </Link>
               </div>

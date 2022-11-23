@@ -12,13 +12,13 @@ const MissionsContainer = () => {
     setLoading(true);
     API.getAllLaunches()
       .then(setLaunches)
+      .catch(console.log("Error"))
       .finally(() => {
         setLoading(false);
       });
   }, []);
 
   return (
-    <div>
       <div>
         {loading ? (
           <div className="h-screen flex flex-col items-center justify-center">
@@ -31,7 +31,6 @@ const MissionsContainer = () => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 
