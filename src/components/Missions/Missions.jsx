@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Missions = ({ launches }) => {
   return (
@@ -23,7 +24,9 @@ const Missions = ({ launches }) => {
               </div>
               <p>Year: {launch.launch_year}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary h-8 mt-4">Info</button>
+                <Link to={`${flightNumber}`}>
+                  <button className="btn btn-primary h-8 mt-4">Info</button>
+                </Link>
               </div>
             </div>
           </div>
