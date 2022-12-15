@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo-spacex.png";
+import Tilt from "react-parallax-tilt";
 
 const Navbar = () => {
   return (
@@ -41,14 +42,14 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Link to="/">
-        <div className="navbar-center">
-          <img className="w-72 max-w-fit" src={logo} alt="Spacex Logo" />
-        </div>
-      </Link>
-      <div className="navbar-end">
-       
-      </div>
+      <Tilt>
+        <Link to="/">
+          <div className="navbar-center">
+            <img className="w-72 max-w-fit" src={logo} alt="Spacex Logo" />
+          </div>
+        </Link>
+      </Tilt>
+      <div className="navbar-end"></div>
     </div>
   );
 };
