@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path='/missions' element={<MissionsContainer/>}></Route>
           <Route path='missions/:missionId' element={<Mission/>}></Route>
+          <Route path="*" element={<Home />}></Route>
         </Routes>
         <Footer/>   
       </BrowserRouter>
