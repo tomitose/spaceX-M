@@ -10,6 +10,7 @@ const MissionsContainer = () => {
 
   useEffect(() => {
     setLoading(true);
+    window.scrollTo(0, 0);
     API.getAllLaunches()
       .then(setLaunches)
       .catch(console.log("Error"))
@@ -25,8 +26,8 @@ const MissionsContainer = () => {
             <progress className="progress w-56"></progress>
           </div>
         ) : (
-          <div>
-            <h1 className="font-bold text-center">SpaceX Launches:</h1>
+          <div className="bg-base-100">
+            <h1 className="font-bold text-center text-accent-content">SpaceX Launches:</h1>
             <Missions launches={launches} />
           </div>
         )}
