@@ -8,9 +8,9 @@ const Mission = () => {
   const [launch, setLaunch] = useState();
   const { missionId } = useParams();
 
-  // const dateString = launch.launch_date_utc;
-  // const newDate = new Date(dateString);
-  // const formattedDate = newDate.toLocaleString();
+  const dateString = launch?.launch_date_utc;
+  const newDate = dateString ? new Date(dateString) : null;
+  const formattedDate = newDate ? newDate.toLocaleString() : "";
   
 
   useEffect(() => {
@@ -23,11 +23,11 @@ const Mission = () => {
 
 
   return (
-    <div style={{backgroundImage: "url(https://www.spacex.com/static/images/backgrounds/mission_feature.jpg)"}} className="h-screen flex flex-col justify-center bg-center bg-cover">
+    <div style={{backgroundImage: "url(https://www.spacex.com/static/images/backgrounds/mission_feature.jpg)"}} className="h-screen flex flex-col bg-center bg-cover">
       {!launch ? (
         <div className="text-center">Loading...</div>
       ) : (
-        <Tilt className="mx-auto w-full max-w-xl rounded shadow-lg h-64 text-center">
+        <Tilt className="mx-auto w-full max-w-xl mt-56 rounded shadow-lg h-64 text-center">
             <div className="card lg:card-side bg-base-200 shadow-xl">
               <figure className="p-4">
                 <img
@@ -45,9 +45,9 @@ const Mission = () => {
                 ) : (
                   <p className="border-primary-focus">{launch.details}</p> 
                 )}
-                {/* <div className="text-center">
+                <div className="text-center">
                   <div className="badge bg-primary text-accent ">{formattedDate}</div>
-                </div> */}
+                </div>
               </div>
             </div>
         </Tilt>
