@@ -34,7 +34,7 @@ const Mission = () => {
       {!launch ? (
         <div className="text-center">Loading...</div>
       ) : (
-        <Tilt className="mx-auto w-full max-w-xl rounded shadow-lg text-center ">
+        <Tilt className="mx-auto w-full max-w-4xl rounded shadow-lg text-center ">
             <div className="card lg:card-side bg-base-200 shadow-xl outline Tilt-inner hover:outline-primary">
               <figure className="p-4 flex-col">
                 <img
