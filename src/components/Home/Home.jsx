@@ -12,11 +12,11 @@ const Home = () => {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
+          <div className="max-w-xl">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Here you will see some of the missions we´ve done .
-            </p>
+            <h3 className="mb-5">
+              Here you will see some of the missions we´ve done.
+            </h3>
             <Link to="/missions">
               <button className="btn btn-primary">Get Started</button>
             </Link>

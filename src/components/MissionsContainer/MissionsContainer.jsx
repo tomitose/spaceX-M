@@ -20,14 +20,14 @@ const MissionsContainer = () => {
   }, []);
 
   return (
-      <div>
+      <div style={{backgroundColor:"#e9e9e9"}}>
         {loading ? (
           <div className="h-screen flex flex-col items-center justify-center">
             <progress className="progress w-56"></progress>
           </div>
         ) : (
-          <div className="bg-base-100">
-            <h1 className="font-bold text-center text-accent-content">SpaceX Launches:</h1>
+          <div className="bg-base-100" style={{backgroundColor:"#e9e9e9"}}>
+            <h1 className="font-bold text-center text-accent-content pt-6">SpaceX Launches</h1>
             <Missions launches={launches} />
           </div>
         )}
