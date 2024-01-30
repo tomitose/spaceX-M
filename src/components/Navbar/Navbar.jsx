@@ -28,16 +28,16 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <Link to="/">
-              <li>
+            <li>
+              <Link to="/">
                 <p>Home</p>
-              </li>
-            </Link>
-            <Link to="/about">
-              <li>
-                <a>About</a>
-              </li>
-            </Link>            
+              </Link>
+            </li>
+            <li>
+              <Link to="/about">
+                <p>About</p>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import MissionsContainer from "../MissionsContainer/MissionsContainer";
+import { useEffect } from "react";
 // import spaceImg from "../../assets/img/spacex-"
 
 const Home = () => {
+
+  const isMounted = useRef(true);
+
+  useEffect(() => {
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (isMounted.current) {
+          const exito = Math.random() < 0.5;
+
+          if (exito) {
+            resolve(`el número es ${exito} y es exitoso`);
+          } else {
+            reject(`el número es ${exito} y falló `);
+          }
+        }
+      }, 1000);
+    });
+
+    myPromise
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    return () => {
+      // Al desmontar el componente, actualiza el valor de isMounted
+      isMounted.current = false;
+    };
+  }, []);
+
+
   return (
     <div>
       <div
